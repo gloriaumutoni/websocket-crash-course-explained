@@ -8,6 +8,9 @@ const io=socketio(esxpressServer,{})
 io.on('connect',socket=>{
     console.log(socket.id,'has joined our server')
     socket.emit('event',[1,2,3])
+    socket.on('thankyou',data=>{
+      console.log('the data is',data)
+    })
 })
 
  
